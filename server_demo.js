@@ -15,6 +15,12 @@ http.createServer((req, res) => {
             res.end(html);
         });
     }
+    else if (req.url === "/contact") {
+        fs.readFile("./public/contact.html", "UTF-8", function (err, html) {
+            res.writeHead(200, { "Content-Type": "text/html" });
+            res.end(html);
+        });
+    }
     else {
         fs.readFile("./public/404.html", "UTF-8", function (err, html) {
             res.writeHead(200, { "Content-Type": "text/html" });
